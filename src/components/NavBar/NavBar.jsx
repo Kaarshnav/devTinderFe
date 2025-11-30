@@ -1,6 +1,8 @@
-import React from "react";
+import { useSelector } from "react-redux";
 
 const NavBar = () => {
+  const authdata = useSelector((store) => store.auth);
+  console.log(authdata);
   return (
     <div className="navbar bg-base-300 shadow-sm">
       <div className="flex-1">
@@ -13,6 +15,7 @@ const NavBar = () => {
             role="button"
             className="btn btn-ghost btn-circle avatar"
           >
+            <h1>Hi {authdata.user.firstName}</h1>
             <div className="w-10 rounded-full">
               <img
                 alt="Tailwind CSS Navbar component"
